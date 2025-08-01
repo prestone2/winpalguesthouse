@@ -8,10 +8,11 @@ const Location = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Find <span className="text-primary">Our Location</span>
+            Find Us in <span className="text-primary">Cheptais</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Nestled in the heart of nature, yet conveniently accessible. Discover our peaceful retreat location.
+            Winpal Guest House is conveniently located at the heart of Cheptais, providing easy access to local attractions 
+            and amenities. Our central location makes us the perfect base for exploring the area.
           </p>
         </div>
 
@@ -19,16 +20,15 @@ const Location = () => {
           {/* Map */}
           <div className="order-2 lg:order-1">
             <div className="relative rounded-2xl overflow-hidden shadow-elegant">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.3537834707413!2d-74.00369368459418!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-96"
-              />
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1859.6538195633395!2d34.46238599999999!3d0.8045691999999971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177f5f007bc51e79%3A0xf3e606549bbdc486!2sWinpal%20Guest%20House!5e1!3m2!1sen!2ske!4v1753993859217!5m2!1sen!2ske"
+             width="600" 
+             height="450" 
+             style={{border:0}} 
+             allowFullScreen
+             loading="lazy" 
+             referrerPolicy="no-referrer-when-downgrade">
+
+             </iframe>
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
             </div>
           </div>
@@ -42,23 +42,23 @@ const Location = () => {
                   <span>Our Address</span>
                 </CardTitle>
                 <CardDescription>
-                  123 Mountain View Drive<br />
-                  Scenic Valley, State 12345<br />
-                  Cheptais, Kenya
+                  Cheptais, Kenya<br />
+                  Heart of Cheptais<br />
+                  Kenya
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center space-x-3 text-muted-foreground">
                   <Navigation className="w-4 h-4 text-primary" />
-                  <span>15 minutes from downtown</span>
+                  <span>Central Cheptais location</span>
                 </div>
                 <div className="flex items-center space-x-3 text-muted-foreground">
                   <Clock className="w-4 h-4 text-primary" />
-                  <span>30 minutes from airport</span>
+                  <span>Easy access to local attractions</span>
                 </div>
                 <div className="flex items-center space-x-3 text-muted-foreground">
                   <Phone className="w-4 h-4 text-primary" />
-                  <span>+2 (547) 434-577</span>
+                  <span>+254743494577</span>
                 </div>
               </CardContent>
             </Card>

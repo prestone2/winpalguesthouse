@@ -31,15 +31,20 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
-              >
+               onClick={() => {
+                  const targetId = item.href.replace('#', '');
+                  document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                }}>
                 {item.name}
-              </a>
+              </button>
             ))}
-            <Button variant="default" size="sm">
+            <Button 
+              variant="default" 
+              size="sm"
+              onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Book Now
             </Button>
           </nav>
@@ -60,19 +65,29 @@ const Header = () => {
               {navItems.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <a
+                  <button
                     key={item.name}
-                    href={item.href}
-                    className="flex items-center space-x-3 text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => {
+                      const targetId = item.href.replace('#', '');
+                      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                      setIsMenuOpen(false);
+                    }}
+                    className="flex items-center space-x-3 text-foreground hover:text-primary transition-colors duration-300 font-medium py-2 w-full text-left"
                   >
                     <Icon className="w-5 h-5" />
                     <span>{item.name}</span>
-                  </a>
+                  </button>
                 );
               })}
               <div className="pt-4">
-                <Button variant="default" className="w-full">
+                <Button 
+                  variant="default" 
+                  className="w-full"
+                  onClick={() => {
+                    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+                    setIsMenuOpen(false);
+                  }}
+                >
                   Book Now
                 </Button>
               </div>

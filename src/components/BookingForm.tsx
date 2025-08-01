@@ -8,10 +8,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { CalendarIcon, Users, Mail, Phone } from "lucide-react";
 import { format } from "date-fns";
-// Utility function to conditionally join classNames
-function cn(...classes: (string | false | undefined)[]) {
-  return classes.filter(Boolean).join(" ");
-}
+import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 
 const BookingForm = () => {
@@ -72,6 +69,12 @@ const BookingForm = () => {
               <CardDescription>
                 Fill in your details below and we'll get back to you with confirmation
               </CardDescription>
+              <p className="text-sm text-muted-foreground mb-4">
+                Check-in: 12:00 PM | Check-out: 10:00 AM
+              </p>
+              <p className="text-sm text-muted-foreground mb-6">
+                Payment: On arrival or online via Mpesa PayBill 522533, Account: 7994303
+              </p>
             </CardHeader>
             
             <CardContent className="space-y-6">
@@ -146,9 +149,9 @@ const BookingForm = () => {
                         <SelectValue placeholder="Select room type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="deluxe">Single Bed Deluxe - Ksh 1,500/night</SelectItem>
-                        <SelectItem value="mountain">Single Bed Deluxe - Ksh 2,000/night</SelectItem>
-                        <SelectItem value="family"> Double Bed Deluxe - Ksh 2,500/night</SelectItem>
+                        <SelectItem value="single-deluxe">Single Bed Deluxe - KES 1,500</SelectItem>
+                        <SelectItem value="single-deluxe-couple">Single Bed Deluxe (Couple) - KES 2,000</SelectItem>
+                        <SelectItem value="double-deluxe">Double Bed Deluxe - KES 2,500</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>

@@ -87,6 +87,7 @@ const SpecialOffers = () => {
                   </p>
                   <Button 
                     className="w-full bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-primary-foreground font-medium transition-all duration-300 hover:scale-105"
+                    onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Claim Offer
                   </Button>
@@ -104,6 +105,7 @@ const SpecialOffers = () => {
             variant="outline" 
             size="lg"
             className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
           >
             View All Offers
           </Button>

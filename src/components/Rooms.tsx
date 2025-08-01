@@ -4,6 +4,18 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Wifi, Coffee, Car, Users, Bed, Bath, Camera } from "lucide-react";
 import ImageGallery from "@/components/ImageGallery";
+import room1 from "@/assets/room1.jpg";
+import room3 from "@/assets/room3.jpg";
+import rg11 from "@/assets/rg11.jpg";
+import rg12 from "@/assets/rg12.jpg";
+import rg13 from "@/assets/rg13.jpg";
+import rg14 from "@/assets/rg14.jpg";
+import rg15 from "@/assets/rg15.jpg";
+import rg16 from "@/assets/rg16.jpg";
+import rg17 from "@/assets/rg17.jpg";
+import rg18 from "@/assets/rg18.jpg";
+import rg19 from "@/assets/rg19.jpg";
+
 
 const Rooms = () => {
   const [galleryOpen, setGalleryOpen] = useState(false);
@@ -12,59 +24,64 @@ const Rooms = () => {
     {
       id: 1,
       name: "Single Bed Deluxe",
-      description: "Spacious room with garden views, perfect for couples seeking tranquility.",
-      price: "Ksh 1500",
-      image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      amenities: ["King Bed", "Garden View", "Private Bath", "WiFi"],
+      description: "Comfortable single accommodation with queen bed and modern amenities.",
+      price: "KES 1,500",
+      image: room1, // Use imported image
+      amenities: ["Queen Bed", "Hot Shower", "Free WiFi", "Smart TV"],
       gallery: [
-        { src: "photo-1721322800607-8c38375eef04", alt: "Single Bed Deluxe - Main View", title: "Spacious Garden Room" },
-        { src: "photo-1566665797739-1674de7a421a", alt: "Garden Room - Bathroom", title: "Modern Private Bathroom" },
-        { src: "photo-1578662996442-48f60103fc96", alt: "Garden Room - Garden View", title: "Peaceful Garden View" }
+        { src: room1, alt: "Single Bed Deluxe - Main View", title: "Comfortable Single Room" },
+        { src: rg11, alt: "Single Bed Deluxe - Side View", title: "Room Side View" },
+        { src: rg12, alt: "Single Bed Deluxe - Side View", title: "Room Side View" },
+        { src: rg13, alt: "Single Bed Deluxe - Side View", title: "Room Side View" },
+        // Add more images from assets as needed
       ],
       features: [
-        { icon: Bed, text: "queen Size Bed" },
-        { icon: Bath, text: "Private Bathroom" },
+        { icon: Bed, text: "Queen Size Bed" },
+        { icon: Bath, text: "Hot Shower" },
         { icon: Wifi, text: "Free WiFi" },
-        { icon: Coffee, text: "Coffee Station" }
+        { icon: Coffee, text: "Smart TV" }
       ],
       capacity: 1
     },
     {
       id: 2,
-      name: "Single Bed Deluxe",
-      description: "Premium suite with panoramic mountain views and luxury amenities.",
-      price: "Ksh 1500",
-      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      amenities: ["Mountain View", "Balcony", "Luxury Bath", "Mini Fridge"],
+      name: "Single Bed Deluxe (Couple)",
+      description: "Perfect for couples with queen bed and premium amenities.",
+      price: "KES 2,000",
+      image: room1,
+      amenities: ["Queen Bed", "Hot Shower", "Free WiFi", "Smart TV", "Spacious"],
       gallery: [
-        { src: "photo-1472396961693-142e6e269027", alt: "Single Bed Deluxe - Main View", title: "Premium Mountain Suite" },
-        { src: "photo-1631049307264-da0ec9d70304", alt: "Mountain Suite - Bedroom", title: "Luxury Bedroom with Mountain View" },
-        { src: "photo-1584132967334-10e028bd69f7", alt: "Mountain Suite - Balcony", title: "Private Balcony Overlooking Mountains" }
+        { src: room1, alt: "Single Deluxe Couple - Main View", title: "Cozy Couple's Room" },
+        { src: rg14, alt: "Single Deluxe Couple - Side View", title: "Room Side View" },
+        { src: rg15, alt: "Single Deluxe Couple - Side View", title: "Room Side View" },
+        { src: rg16, alt: "Single Deluxe Couple - Side View", title: "Room Side View" },
+        // ...
       ],
       features: [
         { icon: Bed, text: "Queen Size Bed" },
-        { icon: Bath, text: "Luxury Bathroom" },
-        { icon: Wifi, text: "High-Speed WiFi" },
+        { icon: Bath, text: "Hot Shower" },
+        { icon: Wifi, text: "Free WiFi" },
         { icon: Users, text: "Up to 2 Guests" }
       ],
       capacity: 2
     },
     {
       id: 3,
-      name: " Double Bed Deluxe",
-      description: "Perfect for families with forest views and extra space for children.",
-      price: "Ksh 2500",
-      image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      amenities: ["Forest View", "Two Beds", "Family Space", "Parking"],
+      name: "Double Bed Deluxe",
+      description: "Spacious room with two queen beds, ideal for friends or family.",
+      price: "KES 2,500",
+      image: room3,
+      amenities: ["2 x Queen Beds", "Hot Shower", "Free WiFi", "Smart TV", "Spacious"],
       gallery: [
-        { src: "photo-1509316975850-ff9c5deb0cd9", alt: " Double Bed Deluxe - Main View", title: "Spacious Family Room" },
-        { src: "photo-1586023492125-27b2c045efd7", alt: "Family Room - Sleeping Area", title: "Comfortable Twin Beds" },
-        { src: "photo-1566665797739-1674de7a421a", alt: "Family Room - Living Space", title: "Family Relaxation Area" }
+        { src: room3, alt: "Double Bed Deluxe - Main View", title: "Spacious Twin Room" },
+        { src: rg17, alt: "Double Bed Deluxe - Side View", title: "Room Side View" },
+        { src: rg18, alt: "Double Bed Deluxe - Side View", title: "Room Side View" },
+        // ...
       ],
       features: [
-        { icon: Bed, text: "Two queen size Beds" },
-        { icon: Bath, text: "Full Bathroom" },
-        { icon: Car, text: "Free Parking" },
+        { icon: Bed, text: "Two Queen Beds" },
+        { icon: Bath, text: "Hot Shower" },
+        { icon: Wifi, text: "Free WiFi" },
         { icon: Users, text: "Up to 2 Guests" }
       ],
       capacity: 2

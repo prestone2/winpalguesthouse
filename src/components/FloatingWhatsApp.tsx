@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const FloatingWhatsApp = () => {
   const [isOpen, setIsOpen] = useState(false);
   
-  const whatsappNumber = "+1234567890"; // Replace with actual number
+  const whatsappNumber = "254743494577"; // Replace with actual number
   const message = "Hi! I'd like to inquire about booking a room at Winpal Guest House.";
   
   const handleWhatsAppClick = () => {

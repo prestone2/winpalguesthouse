@@ -85,7 +85,7 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0 }: ImageGaller
         onClick={(e) => e.stopPropagation()}
       >
         <img
-          src={`https://images.unsplash.com/${images[currentIndex].src}?auto=format&fit=crop&w=1200&q=80`}
+          src={images[currentIndex].src}
           alt={images[currentIndex].alt}
           className="max-w-full max-h-full object-contain rounded-lg shadow-elegant"
         />
@@ -116,7 +116,7 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0 }: ImageGaller
               }`}
             >
               <img
-                src={`https://images.unsplash.com/${image.src}?auto=format&fit=crop&w=100&q=60`}
+                src={image.src}
                 alt={image.alt}
                 className="w-full h-full object-cover"
               />
@@ -136,24 +136,24 @@ interface GalleryGridProps {
 
 export const GalleryGrid = ({ images, onImageClick }: GalleryGridProps) => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {images.map((image, index) => (
+    <div className="grid grid-cols-4 grid-rows-2 gap-1 h-[600px] rounded-lg overflow-hidden">
+      {images.slice(0, 8).map((image, index) => (
         <div 
           key={index}
-          className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer shadow-warm hover:shadow-elegant transition-all duration-300"
+          className="relative group cursor-pointer overflow-hidden hover:scale-[1.02] transition-transform duration-300"
           onClick={() => onImageClick(index)}
         >
           <img
-            src={`https://images.unsplash.com/${image.src}?auto=format&fit=crop&w=400&q=80`}
+            src={image.src}
             alt={image.alt}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:brightness-110 transition-all duration-300"
           />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-            <ZoomIn className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 h-8 w-8" />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+            <ZoomIn className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 h-6 w-6" />
           </div>
           {image.title && (
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
-              <p className="text-white text-sm font-medium">{image.title}</p>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2">
+              <p className="text-white text-xs font-medium truncate">{image.title}</p>
             </div>
           )}
         </div>

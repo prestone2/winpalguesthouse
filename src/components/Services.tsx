@@ -1,4 +1,4 @@
-import { Wifi, Coffee, Car, Utensils, Shield, Clock, Heart, TreePine } from "lucide-react";
+import { Wifi, Coffee, Car, ChefHat, Shield, Clock, Phone, Shirt } from "lucide-react";
 import { useRef, useEffect } from "react";
 
 const Services = () => {
@@ -6,42 +6,42 @@ const Services = () => {
     {
       icon: Wifi,
       title: "Free WiFi",
-      description: "High-speed internet throughout the property"
+      description: "Complimentary high-speed internet access throughout the property"
     },
     {
       icon: Coffee,
-      title: "Complimentary Breakfast",
-      description: "Fresh local breakfast served daily"
+      title: "Free Breakfast",
+      description: "Start your day with our complimentary breakfast service"
     },
     {
       icon: Car,
       title: "Free Parking",
-      description: "Secure parking available for all guests"
-    },
-    {
-      icon: Utensils,
-      title: "On-site Dining",
-      description: "Restaurant serving local and international cuisine"
-    },
-    {
-      icon: Shield,
-      title: "24/7 Security",
-      description: "Round-the-clock security for your peace of mind"
+      description: "Secure and convenient parking available for all guests"
     },
     {
       icon: Clock,
-      title: "Concierge Service",
-      description: "Personalized assistance and local recommendations"
+      title: "24/7 Reception",
+      description: "Round-the-clock reception desk for all your needs"
     },
     {
-      icon: Heart,
-      title: "Spa Services",
-      description: "Relaxing treatments and wellness services"
+      icon: Shirt,
+      title: "Laundry Services",
+      description: "Professional laundry and dry cleaning services available"
     },
     {
-      icon: TreePine,
-      title: "Nature Activities",
-      description: "Guided tours and outdoor adventures"
+      icon: ChefHat,
+      title: "Self-Catering Kitchen",
+      description: "Fully equipped kitchen available on request for your convenience"
+    },
+    {
+      icon: Phone,
+      title: "Room Service",
+      description: "Optional room service available for your comfort"
+    },
+    {
+      icon: Shield,
+      title: "Quiet Atmosphere",
+      description: "Cool, peaceful environment perfect for relaxation"
     }
   ];
 
@@ -49,11 +49,11 @@ const Services = () => {
   const infoItems = [
     {
       label: "Check-in",
-      value: "3:00 PM onwards",
+      value: "12:00 PM onwards",
     },
     {
       label: "Check-out",
-      value: "11:00 AM",
+      value: "10:00 AM",
     },
     {
       label: "Support",

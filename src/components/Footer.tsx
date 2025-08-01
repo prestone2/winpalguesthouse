@@ -8,9 +8,9 @@ import {
   Phone, 
   MapPin, 
   Clock,
-  Heart,
-  Home
+  Heart
 } from "lucide-react";
+import whitelogo from "@/assets/whitelogo.png";
 
 const Footer = () => {
   return (
@@ -19,9 +19,9 @@ const Footer = () => {
       <div className="bg-gradient-primary py-12">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
-          <p className="text-primary-foreground/90 mb-6 max-w-2xl mx-auto">
-            Subscribe to our newsletter for special offers, seasonal packages, and updates about Winpal Guest House.
-          </p>
+            <p className="text-primary-foreground/90 mb-6 max-w-2xl mx-auto">
+              Subscribe to our newsletter for special offers, seasonal packages, and updates about Winpal Guest House.
+            </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <Input
               type="email"
@@ -43,14 +43,16 @@ const Footer = () => {
             {/* Company Info */}
             <div className="space-y-4">
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-                  <Home className="w-5 h-5 text-primary" />
-                </div>
+                <img 
+                  src={whitelogo} 
+                  alt="Winpal Guest House Logo" 
+                  className="w-12 h-12"
+                />
                 <span className="text-xl font-bold">Winpal Guest House</span>
               </div>
               <p className="text-primary-foreground/80 text-sm leading-relaxed">
-                Your home away from home, nestled in nature's embrace. 
-                Experience comfort, tranquility, and hospitality at its finest.
+                Your Comfort Our Pride. Located at the heart of Cheptais, offering a cozy and homely 
+                bed-and-breakfast experience with spacious rooms and modern amenities.
               </p>
               <div className="flex space-x-4">
                 <Button size="sm" variant="ghost" className="p-2 hover:bg-primary-foreground/10">
@@ -97,13 +99,13 @@ const Footer = () => {
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                   <div>
-                    <div>123 Mountain View Drive</div>
-                    <div className="text-primary-foreground/80">Scenic Valley, State 12345</div>
+                    <div>Cheptais, Kenya</div>
+                    <div className="text-primary-foreground/80">Heart of Cheptais</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 text-accent flex-shrink-0" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+254743494577</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 text-accent flex-shrink-0" />
@@ -121,10 +123,10 @@ const Footer = () => {
                   <span>24/7 Reception</span>
                 </div>
                 <div className="text-primary-foreground/80">
-                  <div className="mb-2">Check-in: 3:00 PM onwards</div>
-                  <div className="mb-2">Check-out: 11:00 AM</div>
+                  <div className="mb-2">Check-in: 12:00 PM onwards</div>
+                  <div className="mb-2">Check-out: 10:00 AM</div>
                   <div className="mb-2">Breakfast: 7:00 AM - 10:00 AM</div>
-                  <div>Concierge: 8:00 AM - 10:00 PM</div>
+                  <div>Languages: English & Kiswahili</div>
                 </div>
               </div>
 
