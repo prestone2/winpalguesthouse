@@ -66,7 +66,13 @@ const Location = () => {
             <Button 
                 variant="default" 
                 className="flex-1"
-                onClick={() => window.open('https://www.google.com/maps/dir//Cheptais,+Kenya', '_blank')}
+                onClick={() =>
+                  window.open(
+                    'https://www.google.com/maps/dir/?api=1&destination=0.8045692,34.462386',
+                    '_blank'
+                  )
+                }
+                
               >
                 Get Directions
               </Button>

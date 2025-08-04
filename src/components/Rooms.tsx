@@ -39,32 +39,10 @@ const Rooms = () => {
       id: 1,
       name: "Single Bed Deluxe",
       description:
-        "Comfortable single accommodation with queen bed and modern amenities.",
-      price: "KES 1,500",
-      image: room1,
-      amenities: ["Queen Bed", "Hot Shower", "Free WiFi", "Smart TV"],
-      gallery: [
-        { src: room1, alt: "Single Bed Deluxe - Main View", title: "Comfortable Single Room" },
-        { src: rg11, alt: "Single Bed Deluxe - Side View", title: "Room Side View" },
-        { src: rg12, alt: "Single Bed Deluxe - Side View", title: "Room Side View" },
-        { src: rg13, alt: "Single Bed Deluxe - Side View", title: "Room Side View" },
-      ],
-      features: [
-        { icon: Bed, text: "Queen Size Bed" },
-        { icon: Bath, text: "Hot Shower" },
-        { icon: Wifi, text: "Free WiFi" },
-        { icon: Coffee, text: "Smart TV" },
-      ],
-      capacity: 1,
-    },
-    {
-      id: 2,
-      name: "Single Bed Deluxe (Couple)",
-      description:
         "Perfect for couples with queen bed and premium amenities.",
-      price: "KES 2,000",
+      price: "KES 1,350",
       image: room1,
-      amenities: ["Queen Bed", "Hot Shower", "Free WiFi", "Smart TV", "Spacious"],
+      amenities: ["4*6 Queen size Bed", "Hot Shower", "Free WiFi", "Smart TV", "Reading table"],
       gallery: [
         { src: room1, alt: "Single Deluxe Couple - Main View", title: "Cozy Couple's Room" },
         { src: rg14, alt: "Single Deluxe Couple - Side View", title: "Room Side View" },
@@ -75,16 +53,38 @@ const Rooms = () => {
         { icon: Bed, text: "Queen Size Bed" },
         { icon: Bath, text: "Hot Shower" },
         { icon: Wifi, text: "Free WiFi" },
-        { icon: Users, text: "Up to 2 Guests" },
+        { icon: Users, text: "Up to 7 Guests" },
       ],
-      capacity: 2,
+      capacity: 7,
+    },
+    {
+      id: 2,
+      name: "Single Bed Deluxe",
+      description:
+        "Comfortable single accommodation with queen bed and modern amenities.",
+      price: "KES 1,500",
+      image: room1,
+      amenities: [" 5*6 king size bed", "Hot Shower", "Free WiFi", "Smart TV", "Spacious"],
+      gallery: [
+        { src: room1, alt: "Single Bed Deluxe - Main View", title: "Comfortable Single Room" },
+        { src: rg11, alt: "Single Bed Deluxe - Side View", title: "Room Side View" },
+        { src: rg12, alt: "Single Bed Deluxe - Side View", title: "Room Side View" },
+        { src: rg13, alt: "Single Bed Deluxe - Side View", title: "Room Side View" },
+      ],
+      features: [
+        { icon: Bed, text: "King Size Bed" },
+        { icon: Bath, text: "Hot Shower" },
+        { icon: Wifi, text: "Free WiFi" },
+        { icon: Coffee, text: "Smart TV" },
+      ],
+      capacity: 1,
     },
     {
       id: 3,
       name: "Double Bed Deluxe",
       description:
         "Spacious room with two queen beds, ideal for friends or family.",
-      price: "KES 2,500",
+      price: "KES 2,000",
       image: room3,
       amenities: ["2 x Queen Beds", "Hot Shower", "Free WiFi", "Smart TV", "Spacious"],
       gallery: [
@@ -94,6 +94,27 @@ const Rooms = () => {
       ],
       features: [
         { icon: Bed, text: "Two Queen Beds" },
+        { icon: Bath, text: "Hot Shower" },
+        { icon: Wifi, text: "Free WiFi" },
+        { icon: Users, text: "Up to 1 Guests" },
+      ],
+      capacity: 1,
+    },
+    {
+      id: 4,
+      name: "Executive Suite",
+      description:
+        "Spacious room with king size bed.",
+      price: "KES 1,750",
+      image: room1,
+      amenities: ["Room coffee", "Hot Shower", "Free WiFi", "Dstv/Smart TV", "Spacious, Mountain view" ],
+      gallery: [
+        { src: room1, alt: "Double Bed Deluxe - Main View", title: "Spacious Room" },
+        { src: rg17, alt: "Double Bed Deluxe - Side View", title: "Room Side View" },
+        { src: rg18, alt: "Double Bed Deluxe - Side View", title: "Room Side View" },
+      ],
+      features: [
+        { icon: Bed, text: "King Size Bed" },
         { icon: Bath, text: "Hot Shower" },
         { icon: Wifi, text: "Free WiFi" },
         { icon: Users, text: "Up to 2 Guests" },

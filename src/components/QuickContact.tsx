@@ -8,19 +8,19 @@ export default function QuickContact() {
     {
       icon: Phone,
       label: "Call Us",
-      value: "+1 (555) 123-4567",
-      action: () => window.open("tel:+15551234567"),
+      value: "+254 743494577",
+      action: () => window.open("tel:+254743494577"),
     },
     {
       icon: Mail,
       label: "Email Us",
-      value: "info@havenguesthouse.com",
-      action: () => window.open("mailto:info@havenguesthouse.com"),
+      value: "winpalinvestments@gmail.com",
+      action: () => window.open("mailto:winpalinvestments@gmail.com"),
     },
     {
       icon: MapPin,
       label: "Visit Us",
-      value: "123 Royal Street, City",
+      value: "Cheptais, Bungoma",
       action: () =>
         document.getElementById("location")?.scrollIntoView({ behavior: "smooth" }),
     },
