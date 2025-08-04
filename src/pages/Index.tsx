@@ -2,11 +2,9 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Rooms from "@/components/Rooms";
 import Services from "@/components/Services";
-import SpecialOffers from "@/components/SpecialOffers";
 import Gallery from "@/components/Gallery";
 import BookingForm from "@/components/BookingForm";
 import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
 import Location from "@/components/Location";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -24,9 +22,6 @@ const Index = () => {
         <section id="services">
           <Services />
         </section>
-        <section id="offers">
-          <SpecialOffers />
-        </section>
         <section id="gallery">
           <Gallery />
         </section>
@@ -42,7 +37,6 @@ const Index = () => {
         <section id="contact">
           <QuickContact />
         </section>
-        <Newsletter />
       </main>
       <Footer />
       <FloatingWhatsApp />

@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ImageGallery, { GalleryGrid } from "@/components/ImageGallery";
 
 // Import your local images from assets
-
 import gallery1 from "@/assets/gallery1.jpg";
 import gallery2 from "@/assets/gallery2.jpg";
 import gallery3 from "@/assets/gallery3.jpg";
@@ -18,7 +17,6 @@ const Gallery = () => {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  // Use your imported images here
   const galleryImages = [
     {
       src: gallery1,
@@ -38,7 +36,7 @@ const Gallery = () => {
     {
       src: gallery4,
       alt: "Mountain view from guest house",
-      title: "Dining rooms"
+      title: "Dining Rooms"
     },
     {
       src: gallery5,
@@ -68,22 +66,39 @@ const Gallery = () => {
   };
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <Card className="border-royal/20 bg-background/50 backdrop-blur-sm">
+    <section className="py-20 bg-gradient-to-br from-gray-100 to-white relative overflow-hidden">
+      {/* Decorative Background Blobs or Texture */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-5 pointer-events-none z-0" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <Card className="border border-royal/20 bg-white/70 backdrop-blur-sm shadow-lg">
           <CardHeader className="text-center">
             <CardTitle className="text-4xl font-bold text-royal mb-4">
               Photo Gallery
             </CardTitle>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Explore the beauty and tranquility of our guest house through these stunning photographs
+              Explore the beauty and tranquility of our guest house through these stunning photographs.
             </p>
           </CardHeader>
-          <CardContent className="p-8">
-            <GalleryGrid 
-              images={galleryImages} 
-              onImageClick={handleImageClick} 
-            />
+          <CardContent className="p-4 sm:p-6 md:p-8">
+            <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+              {galleryImages.map((img, index) => (
+                <div
+                  key={index}
+                  className="cursor-pointer group overflow-hidden rounded-lg shadow-md"
+                  onClick={() => handleImageClick(index)}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="bg-black/50 text-white text-sm p-1 text-center">
+                    {img.title}
+                  </div>
+                </div>
+              ))}
+            </div>
           </CardContent>
         </Card>
       </div>

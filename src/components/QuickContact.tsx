@@ -9,52 +9,55 @@ export default function QuickContact() {
       icon: Phone,
       label: "Call Us",
       value: "+1 (555) 123-4567",
-      action: () => window.open("tel:+15551234567")
+      action: () => window.open("tel:+15551234567"),
     },
     {
       icon: Mail,
       label: "Email Us",
       value: "info@havenguesthouse.com",
-      action: () => window.open("mailto:info@havenguesthouse.com")
+      action: () => window.open("mailto:info@havenguesthouse.com"),
     },
     {
       icon: MapPin,
       label: "Visit Us",
       value: "123 Royal Street, City",
-      action: () => document.getElementById('location')?.scrollIntoView({ behavior: 'smooth' })
+      action: () =>
+        document.getElementById("location")?.scrollIntoView({ behavior: "smooth" }),
     },
     {
       icon: Clock,
       label: "24/7 Support",
       value: "Always Available",
-      action: null
-    }
+      action: null,
+    },
   ];
 
   return (
-    <section className="py-16 bg-gradient-warm">
+    <section className="py-20 bg-gradient-to-r from-white via-blue-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Need Help? We're Here 24/7</h2>
-          <p className="text-muted-foreground text-lg">
-            Get in touch with our dedicated team for any assistance
+          <h2 className="text-4xl font-bold tracking-tight mb-4 text-gray-800">
+            Need Help? We're Here 24/7
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            Reach out to our dedicated team for assistance any time of day or night.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {contactInfo.map((item, index) => (
-            <Card 
-              key={index} 
-              className={`text-center hover:shadow-elegant transition-all duration-300 ${
-                item.action ? 'cursor-pointer hover:scale-105' : ''
-              }`}
+            <Card
+              key={index}
               onClick={item.action || undefined}
+              className={`text-center shadow-sm hover:shadow-xl transition-transform duration-300 ${
+                item.action ? "cursor-pointer hover:scale-105" : ""
+              }`}
             >
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-6 h-6 text-primary" />
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">{item.label}</h3>
+                <h3 className="text-lg font-semibold text-gray-700 mb-1">{item.label}</h3>
                 <p className="text-muted-foreground text-sm">{item.value}</p>
               </CardContent>
             </Card>
@@ -63,7 +66,10 @@ export default function QuickContact() {
 
         <div className="text-center">
           <ContactModal type="general">
-            <Button size="lg" className="text-lg px-8">
+            <Button
+              size="lg"
+              className="text-lg px-8 py-5 rounded-full bg-primary hover:bg-primary/90 transition duration-300"
+            >
               Send Us a Message
             </Button>
           </ContactModal>
