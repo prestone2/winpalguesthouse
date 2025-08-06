@@ -27,7 +27,8 @@ import { CalendarIcon, Users, Mail, Phone, Loader2 } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import { supabase, type BookingData } from "@/lib/supabase";
+import { supabase } from "@/integrations/supabase/client";
+import type { Database } from "@/integrations/supabase/types";
 
 const BookingForm = () => {
   const [checkIn, setCheckIn] = useState<Date>();
@@ -58,27 +59,53 @@ const BookingForm = () => {
     setIsSubmitting(true);
 
     try {
-      const bookingData: Omit<BookingData, 'id' | 'created_at'> = {
-        check_in: format(checkIn, 'yyyy-MM-dd'),
-        check_out: format(checkOut, 'yyyy-MM-dd'),
+      const bookingData: Database['public']['Tables']['bookings']['Insert'] = {
+        check_in_date: format(checkIn, 'yyyy-MM-dd'),
+        check_out_date: format(checkOut, 'yyyy-MM-dd'),
         room_type: roomType,
         guests: parseInt(guests),
-        guest_name: formData.name,
-        guest_email: formData.email,
-        guest_phone: formData.phone || null,
-        special_requests: formData.requests || null,
-        status: 'pending'
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || '',
+        special_requests: formData.requests || null
       };
 
       const { data, error } = await supabase
         .from('bookings')
-        .insert([bookingData])
+        .insert(bookingData)
         .select()
         .single();
 
       if (error) {
         throw error;
       }
+
+       // Send email notification to manager
+       try {
+        const emailPayload = {
+          id: data.id,
+          guest_name: formData.name,
+          guest_email: formData.email,
+          guest_phone: formData.phone || 'Not provided',
+          check_in: format(checkIn, 'yyyy-MM-dd'),
+          check_out: format(checkOut, 'yyyy-MM-dd'),
+          room_type: roomType,
+          guests: parseInt(guests),
+          special_requests: formData.requests || 'None'
+        };
+        const { error: emailError } = await supabase.functions.invoke('send-booking-notification', {
+          body: { bookingData: emailPayload }
+        });
+        if (emailError) {
+          console.error('Email notification failed:', emailError);
+          // Don't fail the booking if email fails
+        }
+      } catch (emailError) {
+        console.error('Email notification failed:', emailError);
+        // Continue with success message even if email fails
+      }
+
+
 
       toast({
         title: "Booking Request Submitted!",
@@ -214,13 +241,16 @@ const BookingForm = () => {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="single-deluxe">
-                          Single Bed Deluxe - KES 1,500
+                          Single Bed Deluxe - KES 1,100
                         </SelectItem>
                         <SelectItem value="single-deluxe-couple">
-                          Single Bed Deluxe (Couple) - KES 2,000
+                          Single Bed Deluxe - KES 1,350
                         </SelectItem>
                         <SelectItem value="double-deluxe">
-                          Double Bed Deluxe - KES 2,500
+                          Double Bed Deluxe - KES 2,000
+                        </SelectItem>
+                        <SelectItem value="double-deluxe">
+                          Executive Suite - KES 1,750
                         </SelectItem>
                       </SelectContent>
                     </Select>

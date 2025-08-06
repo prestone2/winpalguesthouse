@@ -15,25 +15,6 @@ import whitelogo from "@/assets/whitelogo.png";
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
-      {/* Newsletter Section */}
-      <div className="bg-gradient-primary py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
-            <p className="text-primary-foreground/90 mb-6 max-w-2xl mx-auto">
-              Subscribe to our newsletter for special offers, seasonal packages, and updates about Winpal Guest House.
-            </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 bg-card/20 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
-            />
-            <Button variant="secondary" className="bg-card text-primary hover:bg-card/90">
-              Subscribe
-            </Button>
-          </div>
-        </div>
-      </div>
 
       {/* Main Footer Content */}
       <div className="py-16">
@@ -77,8 +58,8 @@ const Footer = () => {
                   { name: "Location", href: "#location" },
                   { name: "Book Now", href: "#booking" },
                   { name: "Contact Us", href: "#contact" },
-                  { name: "Privacy Policy", href: "#" },
-                  { name: "Terms & Conditions", href: "#" }
+                  { name: "Privacy Policy", href: "/terms" },
+                  { name: "Terms & Conditions", href: "/terms" }
                 ].map((link) => (
                   <li key={link.name}>
                     <a 
@@ -150,7 +131,7 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-primary-foreground/80">
             <div className="flex items-center space-x-1">
-              <span>© 2024 Winpal Guest House. Made with</span>
+              <span>© 2025 Winpal Guest House. Made with</span>
               <Heart className="w-4 h-4 text-accent fill-current" />
               <span>for our guests.</span>
             </div>

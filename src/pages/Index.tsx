@@ -6,6 +6,7 @@ import Gallery from "@/components/Gallery";
 import BookingForm from "@/components/BookingForm";
 import Testimonials from "@/components/Testimonials";
 import Location from "@/components/Location";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import QuickContact from "@/components/QuickContact";
@@ -37,6 +38,7 @@ const Index = () => {
         <section id="contact">
           <QuickContact />
         </section>
+        <Newsletter />
       </main>
       <Footer />
       <FloatingWhatsApp />

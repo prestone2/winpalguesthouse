@@ -40,7 +40,7 @@ const Rooms = () => {
       name: "Single Bed Deluxe",
       description:
         "Perfect for couples with queen bed and premium amenities.",
-      price: "KES 1,350",
+      price: "KES 1,100",
       image: room1,
       amenities: ["4*6 Queen size Bed", "Hot Shower", "Free WiFi", "Smart TV", "Reading table"],
       gallery: [
@@ -53,16 +53,16 @@ const Rooms = () => {
         { icon: Bed, text: "Queen Size Bed" },
         { icon: Bath, text: "Hot Shower" },
         { icon: Wifi, text: "Free WiFi" },
-        { icon: Users, text: "Up to 7 Guests" },
+        { icon: Users, text: "Up to 3 Guests" },
       ],
-      capacity: 7,
+      capacity: 3,
     },
     {
       id: 2,
       name: "Single Bed Deluxe",
       description:
         "Comfortable single accommodation with queen bed and modern amenities.",
-      price: "KES 1,500",
+      price: "KES 1,350",
       image: room1,
       amenities: [" 5*6 king size bed", "Hot Shower", "Free WiFi", "Smart TV", "Spacious"],
       gallery: [
@@ -77,7 +77,7 @@ const Rooms = () => {
         { icon: Wifi, text: "Free WiFi" },
         { icon: Coffee, text: "Smart TV" },
       ],
-      capacity: 1,
+      capacity: 7,
     },
     {
       id: 3,
