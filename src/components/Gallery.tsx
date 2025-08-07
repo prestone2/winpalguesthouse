@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ImageGallery, { GalleryGrid } from "@/components/ImageGallery";
+import LazyImage from "@/components/LazyImage";
+import { useLazyLoad } from "@/hooks/useLazyLoad";
 
 // Import your local images from assets
 import gallery1 from "@/assets/gallery1.jpg";
@@ -16,6 +18,7 @@ import gallery8 from "@/assets/gallery8.jpg";
 const Gallery = () => {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const { elementRef, isVisible } = useLazyLoad(0.1, '100px');
 
   const galleryImages = [
     {
@@ -66,7 +69,7 @@ const Gallery = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-100 to-white relative overflow-hidden">
+    <section ref={elementRef} className="py-20 bg-gradient-to-br from-gray-100 to-white relative overflow-hidden">
       {/* Decorative Background Blobs or Texture */}
       <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-5 pointer-events-none z-0" />
 

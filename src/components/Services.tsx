@@ -1,16 +1,17 @@
-import { Wifi, Coffee, Car, ChefHat, Shield, Clock, Phone, Shirt } from "lucide-react";
+import { Wifi, Coffee, Car, ChefHat, Shield, Clock, Phone, Shirt, Zap } from "lucide-react";
 import { useRef, useEffect } from "react";
 
 const Services = () => {
   const services = [
-    { icon: Wifi, title: "Free WiFi", description: "Complimentary high-speed internet access throughout the property" },
-    { icon: Coffee, title: "Free Breakfast", description: "Start your day with our complimentary breakfast service" },
-    { icon: Car, title: "Free Parking", description: "Secure and convenient parking available for all guests" },
+    { icon: Wifi, title: "Strong WiFi", description: "Complimentary high-speed internet access throughout the property" },
+    { icon: Coffee, title: "Breakfast", description: "Start your day with our complimentary breakfast service" },
+    { icon: Car, title: "Parking", description: "Secure and convenient parking available for all guests" },
     { icon: Clock, title: "24/7 Reception", description: "Round-the-clock reception desk for all your needs" },
-    { icon: Shirt, title: "Laundry Services", description: "Professional laundry and dry cleaning services available" },
     { icon: ChefHat, title: "Self-Catering Kitchen", description: "Fully equipped kitchen available on request for your convenience" },
     { icon: Phone, title: "Room Service", description: "Optional room service available for your comfort" },
-    { icon: Shield, title: "Quiet Atmosphere", description: "Cool, peaceful environment perfect for relaxation" }
+    { icon: Shield, title: "Quiet Atmosphere", description: "Cool, peaceful environment perfect for relaxation" },
+    { icon: Zap, title: "Uninterrupted Power", description: "Reliable electricity supply around the clock" }
+
   ];
 
   const infoItems = [

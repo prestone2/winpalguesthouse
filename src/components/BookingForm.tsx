@@ -355,7 +355,7 @@ const BookingForm = () => {
                 </Button>
 
                 <p className="text-sm text-muted-foreground text-center">
-                  * Required fields. We'll contact you within 24 hours to confirm your reservation.
+                  * Required fields. We'll contact you within 2 hours to confirm your reservation.
                 </p>
               </form>
             </CardContent>

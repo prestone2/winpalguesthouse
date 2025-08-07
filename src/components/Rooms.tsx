@@ -17,8 +17,12 @@ import {
   Camera,
 } from "lucide-react";
 import ImageGallery from "@/components/ImageGallery";
+import LazyImage from "@/components/LazyImage";
+import { useLazyLoad } from "@/hooks/useLazyLoad";
 import room1 from "@/assets/room1.jpg";
+import room2 from "@/assets/room2.jpeg";
 import room3 from "@/assets/room3.jpg";
+import room4 from "@/assets/room4.jpeg";
 import rg11 from "@/assets/rg11.jpg";
 import rg12 from "@/assets/rg12.jpg";
 import rg13 from "@/assets/rg13.jpg";
@@ -33,6 +37,7 @@ const Rooms = () => {
   const [selectedRoomImages, setSelectedRoomImages] = useState<
     { src: string; alt: string; title?: string }[]
   >([]);
+  const { elementRef, isVisible } = useLazyLoad(0.1, '100px');
 
   const rooms = [
     {
@@ -41,18 +46,18 @@ const Rooms = () => {
       description:
         "Perfect for couples with queen bed and premium amenities.",
       price: "KES 1,100",
-      image: room1,
-      amenities: ["4*6 Queen size Bed", "Hot Shower", "Free WiFi", "Smart TV", "Reading table"],
+      image: room2,
+      amenities: ["Smart TV", "Reading table"],
       gallery: [
-        { src: room1, alt: "Single Deluxe Couple - Main View", title: "Cozy Couple's Room" },
-        { src: rg14, alt: "Single Deluxe Couple - Side View", title: "Room Side View" },
-        { src: rg15, alt: "Single Deluxe Couple - Side View", title: "Room Side View" },
-        { src: rg16, alt: "Single Deluxe Couple - Side View", title: "Room Side View" },
+        { src: room2, alt: "Single Deluxe  - Main View", title: "Cozy Room" },
+        { src: rg14, alt: "Single Deluxe  - Side View", title: "Hot shower" },
+        { src: rg15, alt: "Single Deluxe  - Side View", title: "Room Side View" },
+        { src: rg16, alt: "Single Deluxe  - Side View", title: "Compound" },
       ],
       features: [
-        { icon: Bed, text: "Queen Size Bed" },
+        { icon: Bed, text: "4*6 sized Bed" },
         { icon: Bath, text: "Hot Shower" },
-        { icon: Wifi, text: "Free WiFi" },
+        { icon: Wifi, text: "WiFi Available" },
         { icon: Users, text: "Up to 3 Guests" },
       ],
       capacity: 3,
@@ -64,7 +69,7 @@ const Rooms = () => {
         "Comfortable single accommodation with queen bed and modern amenities.",
       price: "KES 1,350",
       image: room1,
-      amenities: [" 5*6 king size bed", "Hot Shower", "Free WiFi", "Smart TV", "Spacious"],
+      amenities: [ "Smart TV", "Mountain View"],
       gallery: [
         { src: room1, alt: "Single Bed Deluxe - Main View", title: "Comfortable Single Room" },
         { src: rg11, alt: "Single Bed Deluxe - Side View", title: "Room Side View" },
@@ -72,9 +77,9 @@ const Rooms = () => {
         { src: rg13, alt: "Single Bed Deluxe - Side View", title: "Room Side View" },
       ],
       features: [
-        { icon: Bed, text: "King Size Bed" },
+        { icon: Bed, text: "5*6 Sized Bed" },
         { icon: Bath, text: "Hot Shower" },
-        { icon: Wifi, text: "Free WiFi" },
+        { icon: Wifi, text: "WiFi Available" },
         { icon: Coffee, text: "Smart TV" },
       ],
       capacity: 7,
@@ -86,7 +91,7 @@ const Rooms = () => {
         "Spacious room with two queen beds, ideal for friends or family.",
       price: "KES 2,000",
       image: room3,
-      amenities: ["2 x Queen Beds", "Hot Shower", "Free WiFi", "Smart TV", "Spacious"],
+      amenities: ["Smart TV", "Spacious"],
       gallery: [
         { src: room3, alt: "Double Bed Deluxe - Main View", title: "Spacious Twin Room" },
         { src: rg17, alt: "Double Bed Deluxe - Side View", title: "Room Side View" },
@@ -95,7 +100,7 @@ const Rooms = () => {
       features: [
         { icon: Bed, text: "Two Queen Beds" },
         { icon: Bath, text: "Hot Shower" },
-        { icon: Wifi, text: "Free WiFi" },
+        { icon: Wifi, text: "WiFi Available" },
         { icon: Users, text: "Up to 1 Guests" },
       ],
       capacity: 1,
@@ -106,17 +111,17 @@ const Rooms = () => {
       description:
         "Spacious room with king size bed.",
       price: "KES 1,750",
-      image: room1,
-      amenities: ["Room coffee", "Hot Shower", "Free WiFi", "Dstv/Smart TV", "Spacious, Mountain view" ],
+      image: room4,
+      amenities: ["Room coffee", "Dstv/Smart TV", "Mountain view" ],
       gallery: [
-        { src: room1, alt: "Double Bed Deluxe - Main View", title: "Spacious Room" },
-        { src: rg17, alt: "Double Bed Deluxe - Side View", title: "Room Side View" },
-        { src: rg18, alt: "Double Bed Deluxe - Side View", title: "Room Side View" },
+        { src: room4, alt: "Double Bed Deluxe - Main View", title: "Spacious Room" },
+        { src: rg11, alt: "Double Bed Deluxe - Side View", title: "Room Side View" },
+        { src: rg12, alt: "Double Bed Deluxe - Side View", title: "Room Side View" },
       ],
       features: [
         { icon: Bed, text: "King Size Bed" },
         { icon: Bath, text: "Hot Shower" },
-        { icon: Wifi, text: "Free WiFi" },
+        { icon: Wifi, text: "WiFi Availble" },
         { icon: Users, text: "Up to 2 Guests" },
       ],
       capacity: 2,
@@ -130,6 +135,7 @@ const Rooms = () => {
 
   return (
     <section
+      ref={elementRef} 
       id="rooms"
       className="relative py-20 bg-gradient-to-br from-[#fdfbfb] to-[#ebedee] overflow-hidden"
     >
@@ -156,10 +162,11 @@ const Rooms = () => {
                 className="min-w-[85%] sm:min-w-[60%] md:min-w-0 group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 bg-card border-border/50"
               >
                 <div className="relative overflow-hidden rounded-t-lg group cursor-pointer">
-                  <img
+                  <LazyImage
                     src={room.image}
                     alt={room.name}
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    fallback="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDgwMCAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMjU2IiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik00MDAuNSAxMjhMMzgwIDEwNy41VjE0OC41TDQwMC41IDEyOFpNNDIxIDEwNy41VjE0OC41TDQwMC41IDEyOFoiIGZpbGw9IiNEMUQ1REIiLz4KPC9zdmc+"
                   />
                   <div className="absolute top-4 right-4">
                     <Badge variant="secondary" className="bg-card/90 backdrop-blur-sm">

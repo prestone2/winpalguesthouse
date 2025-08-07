@@ -81,7 +81,7 @@ const Newsletter = () => {
               Stay in the Loop
             </CardTitle>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Join our newsletter for exclusive offers, seasonal deals, and the latest updates from Haven Guest House
+              Join our newsletter for exclusive offers, seasonal deals, and the latest updates from Winpal Guest House
             </p>
           </CardHeader>
           

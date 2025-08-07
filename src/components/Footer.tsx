@@ -110,17 +110,6 @@ const Footer = () => {
                   <div>Languages: English & Kiswahili</div>
                 </div>
               </div>
-
-              {/* WhatsApp Contact */}
-              <div className="mt-6">
-                <Button 
-                  variant="secondary" 
-                  className="w-full bg-success hover:bg-success/90 text-success-foreground"
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  WhatsApp Us
-                </Button>
-              </div>
             </div>
           </div>
         </div>
