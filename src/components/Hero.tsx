@@ -25,7 +25,7 @@ const heroSlides = [
 		highlight: "Accommodation",
 		subtitle: "Spacious & Modern Rooms",
 		description:
-			"Each room features comfortable beds, hot showers, free Wi-Fi, and all the amenities you need for a relaxing stay in Cheptais.",
+			"Each room features comfortable beds, hot showers, Wi-Fi Available, and all the amenities you need for a relaxing stay in Cheptais.",
 		highlights: [
 			 { icon: Star, text: "Hot Showers" },
         { icon: Users, text: "Free WiFi" },
