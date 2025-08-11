@@ -245,10 +245,10 @@ const BookingForm = () => {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="single-deluxe">
-                          Single Bed Deluxe - KES 1,100
+                          Single Bed Deluxe - KES 1,200
                         </SelectItem>
                         <SelectItem value="single-deluxe-couple">
-                          Single Bed Deluxe - KES 1,350
+                          Single Bed Deluxe - KES 1,500
                         </SelectItem>
                         <SelectItem value="double-deluxe">
                           Double Bed Deluxe - KES 2,000
