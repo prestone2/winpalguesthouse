@@ -109,7 +109,7 @@ const BookingForm = () => {
 
       toast({
         title: "Booking Request Submitted!",
-        description: `Your booking request #${data.id.slice(0, 8)} has been submitted successfully. We'll contact you within 24 hours to confirm your reservation.`,
+        description: `Your booking request has been submitted successfully. We'll contact you within 2 hours to confirm your reservation.`,
       });
 
       // Reset form
