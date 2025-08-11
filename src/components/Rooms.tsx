@@ -45,7 +45,7 @@ const Rooms = () => {
       name: "Single Bed Deluxe",
       description:
         "Perfect for couples with queen bed and premium amenities.",
-      price: "KES 1,100",
+      price: "KES 1,200",
       image: room2,
       amenities: ["Smart TV", "Reading table"],
       gallery: [
@@ -67,7 +67,7 @@ const Rooms = () => {
       name: "Single Bed Deluxe",
       description:
         "Comfortable single accommodation with queen bed and modern amenities.",
-      price: "KES 1,350",
+      price: "KES 1,500",
       image: room1,
       amenities: [ "Smart TV", "Mountain View"],
       gallery: [
@@ -138,6 +138,7 @@ const Rooms = () => {
       ref={elementRef} 
       id="rooms"
       className="relative py-20 bg-gradient-to-br from-[#fdfbfb] to-[#ebedee] overflow-hidden"
+      aria-labelledby="rooms-heading"
     >
       {/* Background Blurs */}
       <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-purple-200 opacity-30 rounded-full blur-3xl z-0" />
@@ -146,7 +147,7 @@ const Rooms = () => {
       {/* Foreground Content */}
       <div className="relative z-10 container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+        <h2 id="rooms-heading" className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Our Beautiful <span className="text-primary">Rooms</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -164,7 +165,7 @@ const Rooms = () => {
                 <div className="relative overflow-hidden rounded-t-lg group cursor-pointer">
                   <LazyImage
                     src={room.image}
-                    alt={room.name}
+                    alt={`${room.name} - Premium accommodation at Winpal Guest House Cheptais`}
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                     fallback="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDgwMCAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMjU2IiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik00MDAuNSAxMjhMMzgwIDEwNy41VjE0OC41TDQwMC41IDEyOFpNNDIxIDEwNy41VjE0OC41TDQwMC41IDEyOFoiIGZpbGw9IiNEMUQ1REIiLz4KPC9zdmc+"
                   />

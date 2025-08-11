@@ -2,6 +2,8 @@ import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+
+// Lazy load components for better performance
 const Rooms = lazy(() => import("@/components/Rooms"));
 const Services = lazy(() => import("@/components/Services"));
 const Gallery = lazy(() => import("@/components/Gallery"));
@@ -23,42 +25,28 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main>
+      <main role="main">
         <Hero />
         <Suspense fallback={<SectionLoader />}>
-          <section id="rooms">
-            <Rooms />
-          </section>
+          <Rooms />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
-          <section id="services">
-            <Services />
-          </section>
+          <Services />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
-          <section id="gallery">
-            <Gallery />
-          </section>
+          <Gallery />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
-          <section id="booking">
-            <BookingForm />
-          </section>
+          <BookingForm />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
-          <section id="testimonials">
-            <Testimonials />
-          </section>
+          <Testimonials />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
-          <section id="location">
-            <Location />
-          </section>
+          <Location />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
-          <section id="contact">
-            <QuickContact />
-          </section>
+          <QuickContact />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
           <Newsletter />

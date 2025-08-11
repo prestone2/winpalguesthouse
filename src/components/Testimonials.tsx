@@ -5,7 +5,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Prestone Ong``oro",
+      name: "Prestone Ong`oro",
       location: "Karen, Kenya",
       rating: 5,
       text: "Winpal Guest House exceeded all our expectations! The mountain views were breathtaking, the room was spotless, and the staff went above and beyond to make our stay special. We'll definitely be returning!",
