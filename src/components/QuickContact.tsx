@@ -14,8 +14,8 @@ export default function QuickContact() {
     {
       icon: Mail,
       label: "Email Us",
-      value: "winpalinvestments@gmail.com",
-      action: () => window.open("mailto:winpalinvestments@gmail.com"),
+      value: "winpalinvestments25@gmail.com",
+      action: () => window.open("mailto:winpalinvestments25@gmail.com"),
     },
     {
       icon: MapPin,
