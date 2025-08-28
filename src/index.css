@@ -130,6 +130,49 @@
     }
 }
 
+/* animated blob movement */
+@keyframes blob {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  33%  { transform: translate(18px, -14px) scale(1.05); }
+  66%  { transform: translate(-12px, 20px) scale(0.95); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+.animate-blob {
+  animation: blob 8s cubic-bezier(.4,.0,.2,1) infinite;
+}
+.animation-delay-2000 { animation-delay: 0.4s; }
+.animation-delay-4000 { animation-delay: 1.2s; }
+.animation-delay-6000 { animation-delay: 2s; }
+
+/* animated gradient background */
+.bg-animated-gradient,
+.bg-animated-gradient::before {
+  --g1: 200deg;
+  --g2: 320deg;
+  background: linear-gradient(120deg, rgba(99,102,241,0.18), rgba(56,189,248,0.12), rgba(168,85,247,0.12));
+  background-size: 600% 600%;
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.bg-animated-gradient {
+  animation: gradientShift 12s ease infinite;
+}
+
+/* utility to reduce particle SVG visibility on small screens */
+@media (max-width: 768px) {
+  .animate-blob { animation-duration: 10s; }
+  .bg-animated-gradient { opacity: 0.45 !important; }
+}
+
+/* stronger debug opacities while testing */
+.debug-visible .animate-blob { opacity: 1 !important; filter: blur(20px) !important; }
+
+/* make animated gradient a bit stronger for testing */
+.bg-animated-gradient { animation: gradientShift 12s ease infinite; opacity: 0.85; }
+
 @layer utilities {
     .scroll-smooth {
         scroll-behavior: smooth;

@@ -52,21 +52,21 @@ const Newsletter = () => {
   };
 
   const benefits = [
-    {
-      icon: Gift,
-      title: "Exclusive Offers",
-      description: "Get first access to special deals and discounts"
-    },
-    {
-      icon: Bell,
-      title: "Early Notifications",
-      description: "Be the first to know about new rooms and amenities"
-    },
-    {
-      icon: Star,
-      title: "VIP Treatment",
-      description: "Enjoy special perks and personalized recommendations"
-    }
+    // {
+    //   icon: Gift,
+    //   title: "Exclusive Offers",
+    //   description: "Get first access to special deals and discounts"
+    // },
+    // {
+    //   icon: Bell,
+    //   title: "Early Notifications",
+    //   description: "Be the first to know about new rooms and amenities"
+    // },
+    // {
+    //   icon: Star,
+    //   title: "VIP Treatment",
+    //   description: "Enjoy special perks and personalized recommendations"
+    // }
   ];
 
   return (

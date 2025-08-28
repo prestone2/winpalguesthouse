@@ -135,11 +135,19 @@ const Rooms = () => {
 
   return (
     <section
-      ref={elementRef} 
+      ref={elementRef}
       id="rooms"
-      className="relative py-20 bg-gradient-to-br from-[#fdfbfb] to-[#ebedee] overflow-hidden"
+      className="relative py-20 bg-gradient-to-br from-blue-50 via-sky-100 to-blue-100 overflow-hidden"
       aria-labelledby="rooms-heading"
     >
+      {/* QuickContact-like animated small shapes (placed behind content) */}
+      <div className="absolute inset-0 pointer-events-none -z-10 opacity-12">
+        <div className="absolute top-10 left-10 w-20 h-20 bg-sky-300/80 rounded-full animate-pulse"></div>
+        <div className="absolute top-20 right-20 w-16 h-16 bg-blue-300/75 rounded-full animate-bounce"></div>
+        <div className="absolute bottom-20 left-20 w-12 h-12 bg-cyan-300/70 rounded-full animate-ping"></div>
+        <div className="absolute bottom-10 right-10 w-24 h-24 bg-blue-200/70 rounded-full animate-pulse"></div>
+      </div>
+
       {/* Background Blurs */}
       <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-purple-200 opacity-30 rounded-full blur-3xl z-0" />
       <div className="absolute -bottom-40 -right-40 w-[400px] h-[400px] bg-blue-100 opacity-20 rounded-full blur-3xl z-0" />
@@ -155,95 +163,102 @@ const Rooms = () => {
           </p>
         </div>
 
-        <div className="md:px-0 -mx-2">
-          <div className="flex overflow-x-auto space-x-4 px-2 md:grid md:grid-cols-2 lg:grid-cols-3 md:space-x-0 md:gap-8">
+        {/* grid changed: 1 / 2 / 3 / 4 cols (xl) and smaller cards */}
+        <div className="md:px-0">
+          {/* Mobile: horizontal scroll; Desktop (md+): grid */}
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory md:overflow-visible md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-6 px-4 md:px-0 no-scrollbar">
             {rooms.map((room) => (
-              <Card
+              <div
                 key={room.id}
-                className="min-w-[85%] sm:min-w-[60%] md:min-w-0 group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 bg-card border-border/50"
+                className="snap-start min-w-[80%] sm:min-w-[60%] md:min-w-0"
               >
-                <div className="relative overflow-hidden rounded-t-lg group cursor-pointer">
-                  <LazyImage
-                    src={room.image}
-                    alt={`${room.name} - Premium accommodation at Winpal Guest House Cheptais`}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                    fallback="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDgwMCAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMjU2IiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik00MDAuNSAxMjhMMzgwIDEwNy41VjE0OC41TDQwMC41IDEyOFpNNDIxIDEwNy41VjE0OC41TDQwMC41IDEyOFoiIGZpbGw9IiNEMUQ1REIiLz4KPC9zdmc+"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <Badge variant="secondary" className="bg-card/90 backdrop-blur-sm">
-                      <Users className="w-3 h-3 mr-1" />
-                      Up to {room.capacity}
-                    </Badge>
-                  </div>
-                  <div className="absolute top-4 left-4">
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      onClick={() => openGallery(room.gallery)}
-                      className="bg-card/90 backdrop-blur-sm hover:bg-card text-primary font-medium"
-                    >
-                      <Camera className="h-4 w-4 mr-1" />
-                      {room.gallery.length} Photos
-                    </Button>
-                  </div>
-                  <div className="absolute bottom-4 left-4">
-                    <span className="text-2xl font-bold text-accent bg-card/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                      {room.price}<span className="text-sm font-normal">/night</span>
-                    </span>
-                  </div>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                    <Button
-                      variant="secondary"
-                      onClick={() => openGallery(room.gallery)}
-                      className="bg-card/90 hover:bg-card text-primary font-medium"
-                    >
-                      View Gallery
-                    </Button>
-                  </div>
-                </div>
-
-                <CardHeader>
-                  <CardTitle className="text-xl text-foreground">{room.name}</CardTitle>
-                  <CardDescription className="text-muted-foreground">
-                    {room.description}
-                  </CardDescription>
-                </CardHeader>
-
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="grid grid-cols-2 gap-2">
-                      {room.features.map((feature, index) => {
-                        const Icon = feature.icon;
-                        return (
-                          <div key={index} className="flex items-center space-x-2 text-sm text-muted-foreground">
-                            <Icon className="w-4 h-4 text-primary" />
-                            <span>{feature.text}</span>
-                          </div>
-                        );
-                      })}
+                <Card
+                  className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 bg-card border-border/50"
+                >
+                  <div className="relative overflow-hidden rounded-t-lg group cursor-pointer">
+                    <LazyImage
+                      src={room.image}
+                      alt={`${room.name} - Premium accommodation at Winpal Guest House Cheptais`}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      fallback="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDgwMCAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMjU2IiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik00MDAuNSAxMjhMMzgwIDEwNy41VjE0OC41TDQwMC41IDEyOFpNNDIxIDEwNy41VjE0OC41TDQwMC41IDEyOFoiIGZpbGw9IiNEMUQ1REIiLz4KPC9zdmc+"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge variant="secondary" className="bg-card/90 backdrop-blur-sm">
+                        <Users className="w-3 h-3 mr-1" />
+                        Up to {room.capacity}
+                      </Badge>
                     </div>
-
-                    <div className="flex flex-wrap gap-2">
-                      {room.amenities.map((amenity, index) => (
-                        <Badge key={index} variant="outline" className="text-xs">
-                          {amenity}
-                        </Badge>
-                      ))}
+                    <div className="absolute top-4 left-4">
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        onClick={() => openGallery(room.gallery)}
+                        className="bg-card/90 backdrop-blur-sm hover:bg-card text-primary font-medium"
+                      >
+                        <Camera className="h-4 w-4 mr-1" />
+                        {room.gallery.length} Photos
+                      </Button>
                     </div>
-
-                    <Button 
-                    variant="default" 
-                    className="w-full mt-4"
-                    onClick={() => {
-                      const bookingSection = document.getElementById('booking');
-                      bookingSection?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                  >
-                      Book This Room
-                    </Button>
+                    <div className="absolute bottom-4 left-4">
+                      <span className="text-lg font-bold text-accent bg-card/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                        {room.price}
+                        <span className="text-xs font-normal">/night</span>
+                      </span>
+                    </div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                      <Button
+                        variant="secondary"
+                        onClick={() => openGallery(room.gallery)}
+                        className="bg-card/90 hover:bg-card text-primary font-medium"
+                      >
+                        View Gallery
+                      </Button>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
+
+                  <CardHeader>
+                    <CardTitle className="text-lg text-foreground">{room.name}</CardTitle>
+                    <CardDescription className="text-muted-foreground text-sm">
+                      {room.description}
+                    </CardDescription>
+                  </CardHeader>
+
+                  <CardContent>
+                    <div className="space-y-3">
+                      <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
+                        {room.features.map((feature, index) => {
+                          const Icon = feature.icon;
+                          return (
+                            <div key={index} className="flex items-center space-x-2">
+                              <Icon className="w-4 h-4 text-primary" />
+                              <span>{feature.text}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {room.amenities.map((amenity, index) => (
+                          <Badge key={index} variant="outline" className="text-xs">
+                            {amenity}
+                          </Badge>
+                        ))}
+                      </div>
+
+                      <Button
+                        variant="default"
+                        className="w-full mt-2"
+                        onClick={() => {
+                          const bookingSection = document.getElementById("booking");
+                          bookingSection?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                      >
+                        Book This Room
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
           </div>
         </div>

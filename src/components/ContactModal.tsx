@@ -123,7 +123,7 @@ export default function ContactModal({ children, type = "general" }: ContactModa
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4" />
-              <span>winpalinvestments@gmail.com</span>
+              <span>winpalinvestments25@gmail.com</span>
             </div>
           </div>
         </div>
