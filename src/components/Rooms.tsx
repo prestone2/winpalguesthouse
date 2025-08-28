@@ -137,7 +137,7 @@ const Rooms = () => {
     <section
       ref={elementRef}
       id="rooms"
-      className="relative py-20 bg-gradient-to-br from-blue-50 via-sky-100 to-blue-100 overflow-hidden"
+      className="relative py-8 md:py-16 bg-gradient-to-br from-blue-50 via-sky-100 to-blue-100 overflow-hidden"
       aria-labelledby="rooms-heading"
     >
       {/* QuickContact-like animated small shapes (placed behind content) */}
@@ -154,12 +154,11 @@ const Rooms = () => {
 
       {/* Foreground Content */}
       <div className="relative z-10 container mx-auto px-4">
-        <div className="text-center mb-16">
-        <h2 id="rooms-heading" className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+         <div className="text-center mb-8 md:mb-12 animate-fade-in">
+          <h2 id="rooms-heading" className="text-2xl md:text-5xl font-bold text-foreground mb-2 md:mb-4 bg-gradient-to-r from-blue-600 to-primary bg-clip-text text-transparent">
             Our Beautiful <span className="text-primary">Rooms</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Each room is thoughtfully designed to provide comfort, style, and unforgettable views of our natural surroundings.
+          <p className="text-base md:text-xl text-foreground/80 max-w-2xl mx-auto font-medium">            Each room is thoughtfully designed to provide comfort, style, and unforgettable views of our natural surroundings.
           </p>
         </div>
 

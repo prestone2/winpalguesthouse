@@ -134,7 +134,7 @@ const BookingForm = () => {
   return (
     <section
       id="booking"
-      className="relative py-20 bg-gradient-to-br from-amber-50 via-white to-blue-50 overflow-hidden"
+      className="relative py-8 md:py-16 bg-gradient-to-br from-amber-50 via-white to-blue-50 overflow-hidden"
     >
       {/* Background Decorative Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-[url('/grid-pattern.svg')] opacity-10" />
@@ -142,11 +142,11 @@ const BookingForm = () => {
       <div className="absolute -bottom-20 right-0 w-96 h-96 bg-amber-100/30 rounded-full blur-2xl opacity-25"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+       <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-5xl font-bold text-foreground mb-2 md:mb-4">
             Book Your <span className="text-primary">Perfect Stay</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+           <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Choose your dates and let us create an unforgettable experience for you.
           </p>
         </div>

@@ -4,14 +4,14 @@ import { MapPin, Navigation, Clock, Phone } from "lucide-react";
 
 const Location = () => {
   return (
-    <section id="location" className="py-20 bg-gradient-to-br from-[#f3f4f6] via-white to-[#e5e7eb]">
+    <section id="location" className="py-8 md:py-16 bg-gradient-to-br from-[#f3f4f6] via-white to-[#e5e7eb]">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+         <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-5xl font-bold text-foreground mb-2 md:mb-4">
             Find Us in <span className="text-primary">Cheptais</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Winpal Guest House is conveniently located at the heart of Cheptais, providing easy access to local attractions 
+          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              Winpal Guest House is conveniently located at the heart of Cheptais, providing easy access to local attractions 
             and amenities. Our central location makes us the perfect base for exploring the area.
           </p>
         </div>

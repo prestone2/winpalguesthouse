@@ -69,17 +69,17 @@ const Gallery = () => {
   };
 
   return (
-    <section ref={elementRef} className="py-20 bg-gradient-to-br from-gray-100 to-white relative overflow-hidden">
+    <section ref={elementRef} className="py-8 md:py-16 bg-gradient-to-br from-gray-100 to-white relative overflow-hidden">
       {/* Decorative Background Blobs or Texture */}
       <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-5 pointer-events-none z-0" />
 
       <div className="container mx-auto px-4 relative z-10">
         <Card className="border border-royal/20 bg-white/70 backdrop-blur-sm shadow-lg">
           <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold text-royal mb-4">
+            <CardTitle className="text-2xl md:text-4xl font-bold text-royal mb-2 md:mb-4">
               Photo Gallery
             </CardTitle>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
               Explore the beauty and tranquility of our guest house through these stunning photographs.
             </p>
           </CardHeader>

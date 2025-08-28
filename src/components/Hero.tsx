@@ -92,15 +92,13 @@ const Hero = () => {
 					))}
 				</div>
 
-				<h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
-					{heroSlides[currentSlide].title} <br />
+ 					<h1 className="text-3xl md:text-7xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight animate-fade-in">					{heroSlides[currentSlide].title} <br />
 					<span className="text-accent">
 						{heroSlides[currentSlide].highlight}
 					</span>
 				</h1>
 
-				<p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-					{heroSlides[currentSlide].description}
+				<p className="text-lg md:text-2xl text-primary-foreground/90 mb-1 md:mb-2 font-semibold animate-fade-in">					{heroSlides[currentSlide].description}
 				</p>
 
 				<div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -131,19 +129,19 @@ const Hero = () => {
 				</div>
 
 				{/* Quick Stats */}
-				<div className="mt-16 grid grid-cols-3 gap-8 max-w-md mx-auto text-primary-foreground">
-					<div className="text-center">
-						<div className="text-3xl font-bold text-accent">13</div>
-						<div className="text-sm opacity-90">Comfortable Rooms</div>
-					</div>
-					<div className="text-center">
-						<div className="text-3xl font-bold text-accent">24/7</div>
-						<div className="text-sm opacity-90">Reception</div>
-					</div>
-					<div className="text-center">
-						<div className="text-3xl font-bold text-accent">Free</div>
-						<div className="text-sm opacity-90">WiFi & Parking</div>
-					</div>
+						<div className="mt-8 md:mt-16 grid grid-cols-3 gap-4 md:gap-8 max-w-md mx-auto text-primary-foreground">
+				<div className="text-center">
+					<div className="text-xl md:text-3xl font-bold text-accent">13</div>
+					<div className="text-xs md:text-sm opacity-90">Comfortable Rooms</div>
+				</div>
+				<div className="text-center">
+					<div className="text-xl md:text-3xl font-bold text-accent">24/7</div>
+					<div className="text-xs md:text-sm opacity-90">Reception</div>
+				</div>
+				<div className="text-center">
+					<div className="text-xl md:text-3xl font-bold text-accent">Free</div>
+					<div className="text-xs md:text-sm opacity-90">WiFi & Parking</div>
+				</div>
 				</div>
 			</div>
 

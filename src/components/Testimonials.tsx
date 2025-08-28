@@ -34,14 +34,13 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white via-slate-100 to-white">
+    <section className="py-8 md:py-16 bg-gradient-to-b from-white via-slate-100 to-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 id="testimonials-heading" className="text-2xl md:text-5xl font-bold text-foreground mb-2 md:mb-4">
             What Our <span className="text-primary">Guests Say</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Don't just take our word for it – hear from the guests who have experienced the magic of Winpal Guest House.
+          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">            Don't just take our word for it – hear from the guests who have experienced the magic of Winpal Guest House.
           </p>
         </div>
 
